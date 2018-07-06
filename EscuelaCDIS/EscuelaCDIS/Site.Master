@@ -6,13 +6,13 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Escuela CDIS</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -38,6 +38,30 @@
             </Scripts>
         </asp:ScriptManager>
 
+        <%-- <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">EscuelaCdis</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Alumnos<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Alumnos/alumno_i">Registrar alumno</a></li>
+                            <li><a href="~/Alumnos/alumno_s">Lista de alumnos</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Facultades<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Facultades/facultad_i_i">Registrar facultad</a></li>
+                            <li><a href="~/Facultades/facultad_s">Lista de facultades</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>--%>
+
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -46,13 +70,13 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                    <a class="navbar-brand" runat="server" href="~/">Escuela CDIS</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Alumnos/alumno_s">Alumnos</a></li>
+                        <li><a runat="server" href="~/Facultades/facultad_s">Facultades</a></li>
+                        <%--<li><a runat="server" href="~/Contact">Contact</a></li>--%>
                     </ul>
                 </div>
             </div>
@@ -60,9 +84,10 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+
+            <footer class="navbar-fixed-bottom">
+                <hr />
+                <p>&copy; <%: DateTime.Now.Year %> - Escuela CDIS</p>
             </footer>
         </div>
 

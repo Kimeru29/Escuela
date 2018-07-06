@@ -1,5 +1,15 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+﻿* {
+    box-sizing: border-box;
+}
+
+div {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
 body {
+    height: 110vh;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -11,13 +21,40 @@ body {
     padding-right: 15px;
 }
 
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="select"] {
     max-width: 280px;
 }
 
+/* Centrado horizontal */
+.block {
+    text-align: center;
+}
+
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.centrado {
+    display: inline-block;
+    vertical-align: middle;
+    width: 450px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
